@@ -2,6 +2,20 @@ from brownie import accounts, network, config, MockV3Aggregator, Contract
 
 
 class ContractSetup:
+    """
+    Class: ContractSetup
+
+    Sets core variables for the network to be used in TicketMaster deployment
+
+    :param None:
+    functions:
+        get_account(index, id): returns account information from company's private key information
+            :param index: Allows you to choose accounts from an index number
+            :param id: Allows you to choose accounts from an id
+        get_contract(contract_name): returns contract information [typically from Mocks during testing]
+            :param contract_name: Allows you to choose a contract
+        deploy_mocks(): Deploys Mock
+    """
 
     def __init__(self):
         self.LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["development", "ganache-local"]
