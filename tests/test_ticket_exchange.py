@@ -25,4 +25,3 @@ def test_only_owner_can_withdraw():
 def test_ticket_master_init():
     tm = TicketMaster("front row")
     assert tm.price == 1200
-    assert tm.ticket_fee == 2
