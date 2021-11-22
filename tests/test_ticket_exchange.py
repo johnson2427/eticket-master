@@ -18,7 +18,7 @@ def test_only_owner_can_withdraw():
     tm = TicketMaster("front row")
     if network.show_active() not in tm.LOCAL_BLOCKCHAIN_ENVIRONMENTS:
         pytest.skip("only for local testing")
-    with pytest.raises(ValueError):
+    with pytest.raises(exceptions.VirtualMachineError):
         tm.ticket_ex.withdraw({"from": tm.get_account(index=3)})
 
 
